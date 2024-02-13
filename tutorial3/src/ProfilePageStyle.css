@@ -1,0 +1,26 @@
+.profile-page {
+  min-width: 35%;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid;
+  border-radius: 5px;
+  background-color: black;
+  border-radius: 3%;
+  color: white;
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  }
+
+  .headings{
+    letter-spacing: 0.15em;
+  }
+  
+  .elements{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 2px;
+  }
+  
