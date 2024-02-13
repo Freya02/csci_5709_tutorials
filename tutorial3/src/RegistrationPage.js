@@ -18,31 +18,36 @@ const RegistrationForm = () => {
 
   const validateField = (name, value) => {
     let error = '';
+    if (value!== ''){
     switch (name) {
       case 'firstName':
       case 'lastName':
-        if (!value.match(/^[a-zA-Z]+$/) || value!== '') {
+        if (!value.match(/^[a-zA-Z]+$/) ) {
           error = 'Please enter only letters';
         }
         break;
       case 'email':
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (!value.match(emailRegex) || value!== '') {
+        if (!value.match(emailRegex) ) {
           error = 'Please enter a valid email address';
         }
         break;
       case 'password':
-        if ( value.length < 8 || value!== '') {
+        if ( value.length < 8 ) {
           error = 'Password should be at least 8 characters';
         }
         break;
       case 'confirmPassword':
-        if (value !== formData.password || value!== '') {
+        if (value !== formData.password ) {
           error = 'Passwords do not match';
         }
         break;
       default:
         break;
+    }
+    }
+    else{
+      error = 'Fill all fields first!!';
     }
     setErrors((prevErrors) => ({ ...prevErrors, [name]: error }));
   };
