@@ -1,15 +1,14 @@
 .registration-form {
+  display: flex;
+  flex-direction: column;
   min-width: 35%;
   margin: 0 auto;
   padding: 20px;
   border: 1px solid;
-  border-radius: 5px;
-  background-color: black;
   border-radius: 3%;
+  background-color: black;
   color: white;
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  display: flex;
-  flex-direction: column;
 }
 
 .formElement{
@@ -18,9 +17,6 @@
   align-items: flex-start;
   width: 100%;
   padding: 10px;
-}
-.headings{
-  letter-spacing: 0.15em;
 }
 
 .registration-form input {
@@ -38,6 +34,7 @@
 }
 
 .registration-form button {
+  letter-spacing: 0.15em;
   padding: 10px;
   background-color: #007bff;
   color: #fff;

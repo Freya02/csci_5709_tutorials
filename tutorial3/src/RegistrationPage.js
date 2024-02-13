@@ -1,7 +1,5 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-
-
 import './RegistrationPageStyle.css';
 
 const RegistrationForm = () => {
@@ -16,7 +14,7 @@ const RegistrationForm = () => {
 
   const [errors, setErrors] = useState({});
 
-  const validateField = (name, value) => {
+  const fieldValidations = (name, value) => {
     let error = '';
     if (value!== ''){
     switch (name) {
@@ -55,7 +53,7 @@ const RegistrationForm = () => {
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
-    validateField(name, value);
+    fieldValidations(name, value);
   };
 
   const handleSubmit = (e) => {
@@ -69,7 +67,7 @@ const RegistrationForm = () => {
       console.log('Form validation failed');
       console.log(formData)
       Object.keys(formData).forEach(function(key) {
-        validateField(key, formData[key])
+        fieldValidations (key, formData[key])
         console.log('Key : ' + key + ', Value : ' + formData[key])
       })
     }
@@ -80,7 +78,7 @@ const RegistrationForm = () => {
       <h2 className='headings'>PROFILE REGISTRATION</h2>
       <form onSubmit={handleSubmit}>
         <div className='formElement'>
-          <label>First Name</label>
+          <label>Enter First Name</label>
           <input
             type="text"
             name="firstName"
@@ -91,7 +89,7 @@ const RegistrationForm = () => {
           {errors.firstName && <span className="error">{errors.firstName}</span>}
       </div>
         <div className='formElement'>
-          <label>Last Name</label>
+          <label>Enter Last Name</label>
           <input
             type="text"
             name="lastName"
@@ -102,7 +100,7 @@ const RegistrationForm = () => {
           {errors.lastName && <span className="error">{errors.lastName}</span>}
         </div>
         <div className='formElement'>
-          <label>Email</label>
+          <label>Enter Email</label>
           <input
             type="email"
             name="email"
@@ -113,7 +111,7 @@ const RegistrationForm = () => {
           {errors.email && <span className="error">{errors.email}</span>}
         </div>
         <div className='formElement'>
-          <label>Password</label>
+          <label>Enter Password</label>
           <input
             type="password"
             name="password"
@@ -136,7 +134,7 @@ const RegistrationForm = () => {
             <span className="error">{errors.confirmPassword}</span>
           )}
         </div>
-        <button className='headings' type="submit">REGISTER</button>
+        <button type="submit">REGISTER</button>
       </form>
     </div>
   );
