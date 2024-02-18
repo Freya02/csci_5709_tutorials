@@ -1,0 +1,43 @@
+.login-page {
+    display: flex;
+    flex-direction: column;
+    min-width: 5%;
+    margin: 0 auto;
+    padding: 15px;
+    border: 1px solid;
+    border-radius: 3%;
+    background-color: black;
+    color: white;
+    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  
+  }
+
+  .headings{
+    letter-spacing: 0.15em;
+  }
+
+  .login-page input {
+    padding: 8px;
+    width: calc(100% - 65px);
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+ .login-page .error {
+    color: red;
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+
+.login-page button {
+    letter-spacing: 0.15em;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  
