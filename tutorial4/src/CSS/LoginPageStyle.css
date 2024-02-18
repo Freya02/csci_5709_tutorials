@@ -1,7 +1,8 @@
 .login-page {
     display: flex;
     flex-direction: column;
-    min-width: 5%;
+    width: 20%;
+    height: 40%;
     margin: 0 auto;
     padding: 15px;
     border: 1px solid;
