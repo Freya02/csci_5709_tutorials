@@ -43,9 +43,7 @@ const UserDetailPage = () => {
             <p className='user-elements'>Tags: {user.tags.join(', ')}</p>
             <p className='user-elements'>Friends: {user.friends.map(friend => friend.name).join(', ')}</p>
     </div>
-
-    )
-
-}
+    );
+};
 
 export default UserDetailPage;

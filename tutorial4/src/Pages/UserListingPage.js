@@ -9,16 +9,17 @@ const UserListingPage = () => {
     const navigate = useNavigate();
 
     useEffect(() => {
-        async function fetchUsers() {
-          try {
-            const response = await axios.get('https://express-t4.onrender.com/api/users');
-            setUsers(response.data);
-          } catch (error) {
-            console.error('Failed to load users data:', error);
-          }
+      const fetchUsers = async () => {
+        try {
+          const response = await axios.get('https://express-t4.onrender.com/api/users');
+          setUsers(response.data);
+        } catch (error) {
+          console.error('Failed to fetch user data:', error);
         }
-        fetchUsers();
-      }, []);
+      };
+      fetchUsers();
+    }, [])
+  
 
 
     const filteredUsers = users.filter(user =>
@@ -30,6 +31,10 @@ const UserListingPage = () => {
     const handleUserClick = (userId) => {
         navigate(`/profile/${userId}`);
       };
+
+    if (users.length === 0) {
+        return null;
+    }
 
     return(
       <div className='user-listing-page'>
@@ -57,6 +62,6 @@ const UserListingPage = () => {
     </div>
   );
     
-}
+};
 
 export default UserListingPage;
